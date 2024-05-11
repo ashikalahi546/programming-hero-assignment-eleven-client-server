@@ -1,11 +1,38 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 
 import { RxEyeClosed } from "react-icons/rx";
 import { Link } from "react-router-dom";
+// import { AuthContext } from './../auth/AuthProvider';
 
 const Register = () => {
+  // const {   user,
+  //   setUser,
+  //   loading,
+  //   setLoading,
+  //   createUser,
+  //   signIn,
+  //   signInWithGoogle,
+  //   logOut,
+  //   updateUserProfile,} = u(AuthContext)
   const [passwordShow, setPasswordShow] = useState("");
+
+  const handleRegister = e=>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log({name,photo,email,password})
+    createUser(email,password)
+    .then(res=> console.log(res))
+    .then(error=>{
+      console.log(error)
+    })
+
+
+  }
   return (
     <div className="hero ">
       <div className="hero-content flex-col w-full">
@@ -13,13 +40,13 @@ const Register = () => {
           <h1 className="md:text-3xl text-2xl text-center pt-5 font-medium">
             Register Now
           </h1>
-          <form className="card-body ">
+          <form onSubmit={handleRegister} className="card-body ">
             <div className="form-control ">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
               <input
-                type="email"
+                type="name"
                 placeholder="name"
                 name="name"
                 className="input input-bordered "
@@ -31,7 +58,7 @@ const Register = () => {
                 <span className="label-text">Photo URL</span>
               </label>
               <input
-                type="text"
+                type="photo"
                 placeholder="photo"
                 name="photo"
                 className="input input-bordered"
