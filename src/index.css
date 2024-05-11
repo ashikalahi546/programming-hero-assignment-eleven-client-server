@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.swiper-button-prev::after,.swiper-button-next::after {
+   display: none;
+
+}
