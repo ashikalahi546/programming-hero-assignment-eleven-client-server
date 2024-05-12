@@ -63,11 +63,10 @@ const Footer = () => {
         </footer>
       </div>
       <div className="border-b  w-full  my-7"></div>
-  <div className="xl:w-9/12 lg:w-10/12 lg:px-0 px-5 mx-auto ">
-  <p className="text-white pb-4 leading-7">
+      <p className="text-white pb-4 leading-7 text-center">
         Copyright 2024 Assiantment <span className="text-[#02C9C9]">.bd</span> All Rights Reserved.
       </p>
-  </div>
+
     </div>
   );
 };

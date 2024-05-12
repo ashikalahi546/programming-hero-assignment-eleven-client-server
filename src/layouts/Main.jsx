@@ -7,7 +7,7 @@ const Main = () => {
     <div>
       <Navber />
       <div className=" mt-6 space-y-10">
-      <div className=" xl:w-9/12 lg:w-10/12 lg:px-0 px-5 mx-auto">
+      <div>
       <Outlet></Outlet>
       </div>
         <div>
