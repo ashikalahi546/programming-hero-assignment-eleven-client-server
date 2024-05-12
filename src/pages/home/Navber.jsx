@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../auth/AuthProvider";
 
 const Navber = () => {
+  const { user, logOut } = useContext(AuthContext);
   const navlinks = (
     <>
       <li>
-        {" "}
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -13,10 +14,9 @@ const Navber = () => {
           }
         >
           Home
-        </NavLink>{" "}
+        </NavLink>
       </li>
       <li>
-        {" "}
         <NavLink
           to="/assignments"
           className={({ isActive }) =>
@@ -24,10 +24,9 @@ const Navber = () => {
           }
         >
           Assignments
-        </NavLink>{" "}
+        </NavLink>
       </li>
       <li>
-        {" "}
         <NavLink
           to="/create"
           className={({ isActive }) =>
@@ -35,10 +34,9 @@ const Navber = () => {
           }
         >
           Create assignments
-        </NavLink>{" "}
+        </NavLink>
       </li>
       <li>
-        {" "}
         <NavLink
           to="/pending"
           className={({ isActive }) =>
@@ -46,7 +44,7 @@ const Navber = () => {
           }
         >
           Pending assignments
-        </NavLink>{" "}
+        </NavLink>
       </li>
     </>
   );
@@ -88,16 +86,61 @@ const Navber = () => {
         <div className="navbar-center hidden lg:flex font-medium text-sm  ">
           <ul className="flex gap-3 px-1 ">{navlinks}</ul>
         </div>
+
         <div className="navbar-end gap-3">
-          <Link to="/login" className="btn bg-[#0C3330] text-white ">
-            Log in
-          </Link>
-          <Link
-            to="/register"
-            className="border border-[#0C3330] hover:bg-[#0C3330] duration-150 delay-150 hover:text-white py-2.5 px-4 rounded-lg cursor-pointer font-medium"
-          >
-            Register
-          </Link>
+          <ul className="menu menu-horizontal px-1">
+            {!user && (
+              <div>
+                <Link to="/login" className="btn bg-[#0C3330] text-white ">
+                  Log in
+                </Link>
+                <Link
+                  to="/register"
+                  className="border border-[#0C3330] hover:bg-[#0C3330] duration-150 delay-150 hover:text-white py-3 ml-4 px-4 rounded-lg cursor-pointer font-medium"
+                >
+                  Register
+                </Link>
+              </div>
+            )}
+          </ul>
+
+          {user && (
+            <div className="flex items-center gap-2">
+              <h1> {user?.displayName}</h1>
+              <div className="dropdown dropdown-end z-50">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost btn-circle avatar"
+                >
+                  <div className="size-10 rounded-full">
+                    <img
+                      className=""
+                      referrerPolicy="no-referrer"
+                      alt="User Profile Photo"
+                      src={user?.photoURL}
+                    />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li>
+                    <Link to="/bid-request">Assignment</Link>
+                  </li>
+                  <li className="mt-2">
+                    <button
+                      onClick={logOut}
+                      className="bg-gray-200 block text-center"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

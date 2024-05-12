@@ -11,7 +11,6 @@ import {
   updateProfile,
 } from 'firebase/auth'
 
-// import app from '../firebase/firebase.confiq'
 import app from './../firebase/firebase.confiq';
 
 
