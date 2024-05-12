@@ -3,10 +3,10 @@ import Main from "../layouts/Main";
 import Home from "../pages/home/Home";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
-import Register from "../pages/Register";
 import Assignments from "../pages/Assignments";
 import CreateAssignments from "../pages/CreateAssignments";
 import PendingAssignments from "../pages/PendingAssignments";
+import PrivateRoute from "./PrivateRoute";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'/create-assignments',
-          element:<CreateAssignments/>
+          element:<PrivateRoute><CreateAssignments/></PrivateRoute>
         },
         {
           path:'/pending-assignments',
