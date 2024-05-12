@@ -6,8 +6,10 @@ const Main = () => {
   return (
     <div>
       <Navber />
-      <div className="space-y-8 mt-5">
-        <Outlet></Outlet>
+      <div className=" mt-6 space-y-10">
+      <div className=" xl:w-9/12 lg:w-10/12 lg:px-0 px-5 mx-auto">
+      <Outlet></Outlet>
+      </div>
         <div>
           <Footer />
         </div>

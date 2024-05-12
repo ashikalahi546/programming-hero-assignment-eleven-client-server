@@ -20,7 +20,7 @@ import {
 
 const Slider = () => {
     return (
-        <div className="  xl:w-9/12 lg:w-10/12 lg:px-0 px-5 mx-auto">
+        <div className=" ">
         <Swiper
            spaceBetween={30}
            navigation={true}
