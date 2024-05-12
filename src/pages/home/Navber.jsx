@@ -28,7 +28,7 @@ const Navber = () => {
       </li>
       <li>
         <NavLink
-          to="/create"
+          to="/create-assignments"
           className={({ isActive }) =>
             isActive ? "text-[#0C3330] " : "text-gray-500"
           }
@@ -38,7 +38,7 @@ const Navber = () => {
       </li>
       <li>
         <NavLink
-          to="/pending"
+          to="/pending-assignments"
           className={({ isActive }) =>
             isActive ? "text-[#0C3330] " : "text-gray-500"
           }
@@ -79,7 +79,7 @@ const Navber = () => {
           <div>
             <Link className=" items-center gap-1.5 md:text-xl flex font-medium text-sm   ">
               <img className="sm:w-auto w-5" src="/images/clip.png" alt="" />
-              <h2> Assiantment.bd</h2>
+              <h2> Assignment.bd</h2>
             </Link>
           </div>
         </div>

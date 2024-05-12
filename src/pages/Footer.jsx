@@ -64,7 +64,7 @@ const Footer = () => {
       </div>
       <div className="border-b  w-full  my-7"></div>
       <p className="text-white pb-4 leading-7 text-center">
-        Copyright 2024 Assiantment <span className="text-[#02C9C9]">.bd</span> All Rights Reserved.
+        Copyright 2024 Assignment <span className="text-[#02C9C9]">.bd</span> All Rights Reserved.
       </p>
 
     </div>
