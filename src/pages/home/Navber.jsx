@@ -49,7 +49,7 @@ const Navber = () => {
     </>
   );
   return (
-    <div className="shadow top-0  w-full  z-20 sticky">
+    <div className="shadow top-0  w-full  z-[999] sticky bg-white">
       <div className="navbar bg-base-100 xl:w-9/12 lg:w-10/12 mx-auto lg:px-0 px-5">
         <div className="navbar-start">
           <div className="dropdown">
