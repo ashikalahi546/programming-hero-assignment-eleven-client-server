@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 const Assignment = ({ assignment }) => {
   const { _id, image, title, description, level, mark, date } = assignment;
 
+
   // const handleDelete = (_id) => {
   //   console.log(_id);
   //   Swal.fire({
@@ -90,7 +91,7 @@ const Assignment = ({ assignment }) => {
           <p>Due : {date}</p>
 
           <div className=" flex gap-5 mt-5">
-            <Link>
+            <Link to={`/updateAssignment/${_id}`}>
               <button className="border-2 py-2.5 rounded-lg px-2.5 text-2xl border-[#0C3330] text-[#0C3330]">
                 <SlPencil />
               </button>
