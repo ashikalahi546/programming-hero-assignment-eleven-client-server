@@ -36,7 +36,7 @@ const Assignment = ({ assignment }) => {
           Swal.fire({
             title: "Deleted!",
             text: "your assignment has been deleted.",
-            icon: "Delete"
+            icon: "delete"
           });
         }
     })
