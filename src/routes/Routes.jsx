@@ -8,6 +8,7 @@ import CreateAssignments from "../pages/CreateAssignments";
 import PendingAssignments from "../pages/PendingAssignments";
 import PrivateRoute from "./PrivateRoute";
 import UpdateAssignment from "../pages/UpdateAssignment";
+import ViewDetails from "../pages/ViewDetails";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -36,11 +37,17 @@ export const router = createBrowserRouter([
         },
         {
           path:'/pending-assignments',
-          element:<PendingAssignments/>
+          element:<PrivateRoute><PendingAssignments/></PrivateRoute>
         },
         {
           path:'/updateAssignment/:id',
-          element:<UpdateAssignment/>
+          element:<UpdateAssignment/>,
+          loader:({params})=>fetch(`${import.meta.env.VITE_APP_URL}/create/${params.id}`)
+        },
+        {
+          path:'/viewDetails/:id',
+          element:<ViewDetails/>,
+          loader:({params})=> fetch(`${import.meta.env.VITE_APP_URL}/create/${params.id}`)
         }
     ]
   },

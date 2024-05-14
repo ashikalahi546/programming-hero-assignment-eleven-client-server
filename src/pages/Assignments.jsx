@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+// import { useLoaderData } from 'react-router-dom';
 import Assignment from './Assignment';
 import { AuthContext } from '../auth/AuthProvider';
 
 const Assignments = () => {
-    const {user} = useContext(AuthContext)
+    // const {user} = useContext(AuthContext)
     const [allData,setData] = useState([])
 //       // const [travelars, setTravelars] = useState([]);
 //   const assignments = allData?.filter(
