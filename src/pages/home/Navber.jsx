@@ -71,7 +71,7 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] py-2.5 w-48 shadow bg-base-100 rounded text-center "
+              className="menu menu-sm dropdown-content mt-3 z-[1] py-2.5 w-48 shadow bg-base-100 rounded text-base text-center "
             >
               {navlinks}
             </ul>
@@ -83,7 +83,7 @@ const Navber = () => {
             </Link>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex font-medium text-sm  ">
+        <div className="navbar-center hidden lg:flex font-medium text-base  ">
           <ul className="flex gap-3 px-1 ">{navlinks}</ul>
         </div>
 
