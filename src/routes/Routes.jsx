@@ -27,8 +27,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'/assignments',
-          element:<Assignments/>,
-          // loader:()=>fetch(`${import.meta.env.VITE_APP_URL}`)
+          element:<Assignments/>
       
         },
         {

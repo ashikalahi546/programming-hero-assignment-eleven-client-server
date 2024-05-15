@@ -1,8 +1,7 @@
-// import axios from "axios";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import toast from "react-hot-toast";
+
 import Swal from "sweetalert2";
 
 const CreateAssignments = () => {
@@ -25,8 +24,7 @@ const CreateAssignments = () => {
       mark,
       description,
     };
-    console.log(createData)
-   
+    console.log(createData);
 
     fetch(`${import.meta.env.VITE_APP_URL}/create`, {
       method: "POST",
@@ -45,7 +43,6 @@ const CreateAssignments = () => {
             confirmButtonText: "Create",
           });
         }
-        // console.log(data);
       });
   };
   return (
@@ -75,10 +72,6 @@ const CreateAssignments = () => {
           required
         />
         <select name="mark" className="select select-bordered w-full ">
-          {/* <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="40">40</option> */}
           <option value="50">50</option>
           <option value="60">60</option>
           <option value="70">70</option>
@@ -92,14 +85,13 @@ const CreateAssignments = () => {
           placeholder="description"
         ></textarea>
 
-
-       <div className="w-full">
-       <DatePicker
+        <div className="w-full">
+          <DatePicker
             className="p-2 border w-[100%] rounded-lg"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
           />
-       </div>
+        </div>
 
         <div className="flex justify-end ">
           <button className="bg-[#0C3330] px-3.5 py-2 text-white font-medium rounded-lg ">
