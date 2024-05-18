@@ -9,6 +9,7 @@ import PendingAssignments from "../pages/PendingAssignments";
 import PrivateRoute from "./PrivateRoute";
 import UpdateAssignment from "../pages/UpdateAssignment";
 import ViewDetails from "../pages/ViewDetails";
+import Register from "../pages/Register";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,12 @@ export const router = createBrowserRouter([
           path:'/login',
           element:<Login/>
         },
+        
+        {
+          path:'/register',
+          element:<Register/>
+        },
+
         {
           path:'/assignments',
           element:<Assignments/>

@@ -4,10 +4,11 @@ const Assignments = () => {
     const [allData,setData] = useState([])
 
     useEffect(()=>{
-        fetch(`${import.meta.env.VITE_APP_URL}/create`)
+         fetch(`${import.meta.env.VITE_APP_URL}/create`)
         .then(res=>res.json())
         .then(data=> setData(data))
-    })
+    },[])
+    console.log(allData)
     return (
         <div className='grid xl:grid-cols-2  xl:w-9/12 lg:w-10/12 mx-auto lg:px-0 px-5 gap-5'>
             {
