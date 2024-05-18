@@ -6,7 +6,7 @@ const Assignments = () => {
 
     useEffect(()=>{
         (async()=>{
-            const res = await axios.get(`${import.meta.env.VITE_APP_URL}/create`)
+            const res = await axios.get(`https://assignment-eleven-c3418406ccf9.herokuapp.com/create`)
             const data = res.data
             setData(data)
         })()
