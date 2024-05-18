@@ -7,6 +7,7 @@ const Assignments = () => {
          fetch(`${import.meta.env.VITE_APP_URL}/create`)
         .then(res=>res.json())
         .then(data=> setData(data))
+        console.log(data)
     },[])
     console.log(allData)
     return (
